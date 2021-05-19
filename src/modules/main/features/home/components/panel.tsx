@@ -4,7 +4,7 @@ import {StyleSheet, View, Text} from 'react-native';
 const HomePanel = () => {
   return (
     <View>
-      <Text>HomePanel</Text>
+      <Text>HomePanel Conquistado</Text>
     </View>
   );
 };
