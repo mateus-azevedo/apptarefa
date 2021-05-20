@@ -6,7 +6,7 @@ const Stack = createStackNavigator();
 
 const Routes = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator headerMode="none">
       <Stack.Screen name="Initiate" component={Screens.InitiateScreen} />
     </Stack.Navigator>
   );
