@@ -1,3 +1,3 @@
-import Navigator from './navigator';
+import Routes from './routes';
 
-export {Navigator};
+export {Routes};
