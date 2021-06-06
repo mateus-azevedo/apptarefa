@@ -1,16 +1,14 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import * as Modules from '../../modules';
+import DrawerRoutes from './drawer';
+import * as Module from '../';
 
 const Tab = createBottomTabNavigator();
 
 const Routes = () => {
   return (
-    <Tab.Navigator initialRouteName="Home">
-      <Tab.Screen
-        name="Home"
-        component={Modules.MainModule.Features.HomeFeature.Config.Routes}
-      />
+    <Tab.Navigator initialRouteName="Main">
+      <Tab.Screen name="Main" component={DrawerRoutes} />
     </Tab.Navigator>
   );
 };

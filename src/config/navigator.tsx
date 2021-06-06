@@ -1,12 +1,20 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {Tabs} from './routes';
-// import {Routes} from '../modules/main/config';
+import {createStackNavigator} from '@react-navigation/stack';
+import * as Features from '../features';
+
+const Stack = createStackNavigator();
 
 const Navigator = () => {
   return (
     <NavigationContainer>
-      <Tabs />
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={Features.HomeFeature.Config.Routes}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
