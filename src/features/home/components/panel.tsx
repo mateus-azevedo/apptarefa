@@ -1,35 +1,58 @@
-import React from 'react';
-import {StyleSheet, View, Text, FlatList} from 'react-native';
+import React, {useState} from 'react';
+import {
+  FlatList,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 
-const produtos = [
+const DATA = [
   {
     id: '001',
-    desc: ['Mouse', '25.00'],
+    title: 'First Item',
   },
   {
     id: '002',
-    desc: ['Teclado', '50.00'],
+    title: 'Second Item',
   },
   {
     id: '003',
-    desc: ['Monitor', '430.00'],
+    title: 'Third Item',
   },
 ];
 
+const Item = ({item, onPress, backgroundColor, textColor}) => (
+  <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
+    <Text style={[styles.title, textColor]}>{item.title}</Text>
+  </TouchableOpacity>
+);
+
 const HomePanel = () => {
-  return (
-    <View style={styles.container}>
-      <Text>HomePanel Conquistado</Text>
-      <FlatList
-        data={produtos}
-        keyExtractor={item => item.id}
-        renderItem={({item}) => (
-          <Text>
-            Descrição: {item.desc[0]} - Valor:{item.desc[1]}
-          </Text>
-        )}
+  const [selectedId, setSelectedId] = useState(null);
+  const renderItem = ({item}) => {
+    const backgroundColor = item.id === selectedId ? '#6e3b6e' : '#f9c2ff';
+    const color = item.id === selectedId ? 'white' : 'black';
+
+    return (
+      <Item
+        item={item}
+        onPress={() => setSelectedId(item.id)}
+        backgroundColor={{backgroundColor}}
+        textColor={{color}}
       />
-    </View>
+    );
+  };
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+        extraData={selectedId}
+      />
+    </SafeAreaView>
   );
 };
 
@@ -38,7 +61,14 @@ export default HomePanel;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginTop: 10,
+  },
+  item: {
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 32,
   },
 });
