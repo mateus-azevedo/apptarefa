@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 
-const Introduction = () => {
+const Introduction = ({navigation}) => {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Olá, Mundo</Text>
+      <Text>Bem-vindo ao aplicativo</Text>
+      <Button title="Começar" onPress={() => navigation.navigate('TaskTip')} />
     </View>
   );
 };
