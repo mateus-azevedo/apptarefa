@@ -1,3 +1,4 @@
+import * as WelcomeFeature from './welcome';
 import * as HomeFeature from './home';
 
-export {HomeFeature};
+export {WelcomeFeature, HomeFeature};
