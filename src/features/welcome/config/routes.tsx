@@ -6,10 +6,11 @@ const Stack = createStackNavigator();
 
 const Routes = () => {
   return (
-    <Stack.Navigator initialRouteName="TaskTip">
-      <Stack.Screen name="Introduction" component={Screen.Introduction} />
-      <Stack.Screen name="TaskTip" component={Screen.TaskTip} />
-      <Stack.Screen name="ToHomeScreen" component={Screen.ToHomeScreen} />
+    <Stack.Navigator initialRouteName="PresentationSwiper">
+      <Stack.Screen
+        name="PresentationSwiper"
+        component={Screen.PresentationSwiper}
+      />
     </Stack.Navigator>
   );
 };
