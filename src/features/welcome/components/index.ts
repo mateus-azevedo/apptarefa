@@ -1,1 +1,3 @@
-export {};
+import Centralize from './centralize';
+
+export {Centralize};

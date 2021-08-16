@@ -1,11 +1,13 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Text} from 'react-native';
+
+import {Centralize} from '../components';
 
 const Introduction = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <Centralize>
       <Text>Bem-vindo ao aplicativo</Text>
-    </View>
+    </Centralize>
   );
 };
 
