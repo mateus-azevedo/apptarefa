@@ -1,12 +1,14 @@
 import React from 'react';
 import {Text} from 'react-native';
 
-import {Centralize} from '../components';
+import {Centralize, ExampleImage} from '../components';
 
 const TaskTip = () => {
   return (
     <Centralize>
-      <Text>Tela TaskTip</Text>
+      <Text>Crie Tarefas</Text>
+      <ExampleImage heightProp={300} widthProp={300} />
+      <Text>É rápido e prático</Text>
     </Centralize>
   );
 };
