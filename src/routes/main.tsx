@@ -12,6 +12,10 @@ const Routes = () => {
         name="Welcome"
         component={Features.WelcomeFeature.Config.Routes}
       />
+      <Stack.Screen
+        name="Home"
+        component={Features.HomeFeature.Config.Routes}
+      />
     </Stack.Navigator>
   );
 };
