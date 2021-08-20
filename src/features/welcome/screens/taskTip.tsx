@@ -3,7 +3,15 @@ import {Text} from 'react-native';
 
 import {Centralize, ExampleImage} from '../components';
 
-const TaskTip = () => {
+interface ITaskTip {
+  pagination: (value: boolean) => void;
+}
+
+const TaskTip = ({pagination}: ITaskTip) => {
+  // pagination = () => {
+  //   pagination(true);
+  // };
+
   return (
     <Centralize>
       <Text>Crie Tarefas</Text>

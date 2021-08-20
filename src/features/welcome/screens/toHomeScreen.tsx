@@ -1,9 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Text, Button} from 'react-native';
 
 import {Centralize, ExampleImage} from '../components';
 
-const ToHomeScreen = () => {
+interface IToHomeScreen {
+  pagination: (value: boolean) => void;
+}
+
+const ToHomeScreen = ({pagination}: IToHomeScreen) => {
+  useEffect(() => {
+    pagination = () => {
+      pagination(false);
+    };
+  });
+
   return (
     <Centralize>
       <ExampleImage heightProp={300} widthProp={300} />
