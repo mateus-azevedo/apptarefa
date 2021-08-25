@@ -1,3 +1,3 @@
-import InitiateScreen from './initiate';
+import HomePanel from './homePanel';
 
-export {InitiateScreen};
+export {HomePanel};

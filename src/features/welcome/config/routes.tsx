@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import * as Screen from '../screens';
+import * as Screens from '../screens';
 
 const Stack = createStackNavigator();
 
@@ -9,7 +9,7 @@ const Routes = () => {
     <Stack.Navigator initialRouteName="PresentationSwiper">
       <Stack.Screen
         name="PresentationSwiper"
-        component={Screen.PresentationSwiper}
+        component={Screens.PresentationSwiper}
       />
     </Stack.Navigator>
   );
