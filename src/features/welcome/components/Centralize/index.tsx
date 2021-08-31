@@ -1,12 +1,12 @@
 import React, {ReactNode} from 'react';
-import {StyledView} from './style';
+import {StyledCentralize} from './style';
 
 interface ICentralizeProps {
   children: ReactNode;
 }
 
 const Centralize = ({children}: ICentralizeProps) => {
-  return <StyledView>{children}</StyledView>;
+  return <StyledCentralize>{children}</StyledCentralize>;
 };
 
 export default Centralize;
