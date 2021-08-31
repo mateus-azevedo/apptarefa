@@ -1,4 +1,7 @@
-import Centralize from './centralize';
+import Centralize from './Centralize';
+import Title from './Title';
+import Footer from './Footer';
+
 import ExampleImage from './exampleImage';
 
-export {Centralize, ExampleImage};
+export {Centralize, Title, Footer, ExampleImage};
