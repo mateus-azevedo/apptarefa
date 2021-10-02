@@ -1,3 +1,5 @@
+import HomePanel from './homePanel';
+
 import Task from './Task';
 
-export {Task};
+export {HomePanel, Task};
