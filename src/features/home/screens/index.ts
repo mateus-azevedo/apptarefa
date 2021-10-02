@@ -1,3 +1,3 @@
-import HomePanel from './homePanel';
+import HomePanel from '../components/homePanel';
 
 export {HomePanel};
