@@ -35,4 +35,6 @@ const SectionTitle = styled.Text`
   font-weight: bold;
 `;
 
-const Items = styled.View``;
+const Items = styled.View`
+  margin-top: 30px;
+`;
