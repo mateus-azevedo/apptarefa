@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Keyboard, Platform} from 'react-native';
+import {Keyboard, Platform, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
 import {Task} from '.';
 
@@ -13,6 +13,12 @@ const HomePanel = () => {
     setTask(null);
   };
 
+  const completeTask = index => {
+    let itemsCopy = [...taskItems];
+    itemsCopy.splice(index, 1);
+    setTaskItems(itemsCopy);
+  };
+
   return (
     <Container>
       <TasksWrapper>
@@ -21,7 +27,11 @@ const HomePanel = () => {
         <Items>
           {/* This is where the tasks will go */}
           {taskItems.map((item, index) => {
-            return <Task key={index} text={item} />;
+            return (
+              <TouchableOpacity key={index} onPress={() => completeTask(index)}>
+                <Task text={item} />
+              </TouchableOpacity>
+            );
           })}
         </Items>
       </TasksWrapper>
