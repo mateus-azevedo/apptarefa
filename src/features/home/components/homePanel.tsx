@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Platform} from 'react-native';
+import {Keyboard, Platform} from 'react-native';
 import styled from 'styled-components/native';
 import {Task} from '.';
 
@@ -8,6 +8,7 @@ const HomePanel = () => {
   const [taskItems, setTaskItems] = useState([]);
 
   const handleAddTask = () => {
+    Keyboard.dismiss(); // Keyboard back down
     setTaskItems([...taskItems, task]);
     setTask(null);
   };
@@ -19,8 +20,9 @@ const HomePanel = () => {
 
         <Items>
           {/* This is where the tasks will go */}
-          <Task text="Task 1" />
-          <Task text="Task 2" />
+          {taskItems.map((item, index) => {
+            return <Task key={index} text={item} />;
+          })}
         </Items>
       </TasksWrapper>
 
