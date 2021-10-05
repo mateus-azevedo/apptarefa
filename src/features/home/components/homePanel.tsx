@@ -1,9 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Platform} from 'react-native';
 import styled from 'styled-components/native';
 import {Task} from '.';
 
 const HomePanel = () => {
+  const [task, setTask] = useState('');
+  const [taskItems, setTaskItems] = useState([]);
+
+  const handleAddTask = () => {
+    setTaskItems([...taskItems, task]);
+    setTask(null);
+  };
+
   return (
     <Container>
       <TasksWrapper>
@@ -17,9 +25,13 @@ const HomePanel = () => {
       </TasksWrapper>
 
       <WriteTaskWrapper behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-        <Input placeholder={'Write Task'} />
+        <Input
+          placeholder={'Write Task'}
+          value={task}
+          onChangeText={text => setTask(text)}
+        />
 
-        <ButtonAddContainer>
+        <ButtonAddContainer onPress={() => handleAddTask()}>
           <ButtonAddWrapper>
             <ButtonAddText>+</ButtonAddText>
           </ButtonAddWrapper>
