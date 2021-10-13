@@ -1,3 +1,3 @@
-import HomePanel from '../layouts/homePanel';
+import HomePanel from '../panels/homePanel';
 
 export {HomePanel};
