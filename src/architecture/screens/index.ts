@@ -1,1 +1,3 @@
-export {};
+import PanelScreen from './panel';
+
+export {PanelScreen};
