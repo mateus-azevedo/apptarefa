@@ -1,3 +1,3 @@
-import HomePanel from '../panels/homePanel';
+import HomeScreen from './home';
 
-export {HomePanel};
+export {HomeScreen};

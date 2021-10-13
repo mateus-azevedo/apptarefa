@@ -6,8 +6,8 @@ const Stack = createStackNavigator();
 
 const Routes = () => {
   return (
-    <Stack.Navigator headerMode="none">
-      <Stack.Screen name="HomePanel" component={Screens.HomePanel} />
+    <Stack.Navigator>
+      <Stack.Screen name="Home Screen" component={Screens.HomeScreen} />
     </Stack.Navigator>
   );
 };
