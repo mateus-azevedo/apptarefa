@@ -1,3 +1,4 @@
+import BackgroundStyled from './BackgroundStyled';
 import Task from './Task';
 
-export {Task};
+export {BackgroundStyled, Task};

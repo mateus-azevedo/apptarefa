@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Keyboard, Platform, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
 
-import {Task} from '../components';
+import {BackgroundStyled, Task} from '../components';
 
 const HomePanel = () => {
   const [task, setTask] = useState('');
@@ -21,7 +21,7 @@ const HomePanel = () => {
   };
 
   return (
-    <Container>
+    <BackgroundStyled>
       <TasksWrapper>
         <SectionTitle>Today's tasks</SectionTitle>
 
@@ -50,16 +50,11 @@ const HomePanel = () => {
           </ButtonAddWrapper>
         </ButtonAddContainer>
       </WriteTaskWrapper>
-    </Container>
+    </BackgroundStyled>
   );
 };
 
 export default HomePanel;
-
-const Container = styled.View`
-  flex: 1;
-  background-color: #e8eaed;
-`;
 
 const TasksWrapper = styled.View`
   padding-top: 20px;
