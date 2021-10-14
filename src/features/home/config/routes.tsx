@@ -4,10 +4,14 @@ import * as Screens from '../screens';
 
 const Stack = createStackNavigator();
 
+enum RouteName {
+  HOME = 'Home Screen',
+}
+
 const Routes = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home Screen" component={Screens.HomeScreen} />
+      <Stack.Screen name={RouteName.HOME} component={Screens.HomeScreen} />
     </Stack.Navigator>
   );
 };

@@ -5,15 +5,20 @@ import * as Features from '../features';
 
 const Stack = createStackNavigator();
 
+enum RouteName {
+  WELCOME = 'Welcome Feature',
+  HOME = 'Home Feature',
+}
+
 const Routes = () => {
   return (
-    <Stack.Navigator initialRouteName="Home Feature" headerMode="none">
+    <Stack.Navigator initialRouteName={RouteName.HOME} headerMode="none">
       <Stack.Screen
-        name="Welcome Feature"
+        name={RouteName.WELCOME}
         component={Features.WelcomeFeature.Config.Routes}
       />
       <Stack.Screen
-        name="Home Feature"
+        name={RouteName.HOME}
         component={Features.HomeFeature.Config.Routes}
       />
     </Stack.Navigator>

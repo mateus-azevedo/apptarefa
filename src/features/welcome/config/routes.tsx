@@ -4,11 +4,15 @@ import * as Screens from '../screens';
 
 const Stack = createStackNavigator();
 
+enum RouteName {
+  SWIPER = 'Presentation Swiper',
+}
+
 const Routes = () => {
   return (
-    <Stack.Navigator initialRouteName="PresentationSwiper">
+    <Stack.Navigator initialRouteName={RouteName.SWIPER}>
       <Stack.Screen
-        name="PresentationSwiper"
+        name={RouteName.SWIPER}
         component={Screens.PresentationSwiper}
       />
     </Stack.Navigator>
