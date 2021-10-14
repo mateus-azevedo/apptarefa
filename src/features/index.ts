@@ -1,4 +1,5 @@
-import * as WelcomeFeature from './welcome';
+import * as AddTaskFeature from './addTask';
 import * as HomeFeature from './home';
+import * as WelcomeFeature from './welcome';
 
-export {WelcomeFeature, HomeFeature};
+export {AddTaskFeature, HomeFeature, WelcomeFeature};
