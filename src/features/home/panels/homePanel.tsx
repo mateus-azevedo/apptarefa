@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import {Keyboard, Platform, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
 
-import {BackgroundStyled, Task} from '../components';
+import {BackgroundStyled} from '@architecture/components';
+import {Task} from '../components';
 
 const HomePanel = () => {
   const [task, setTask] = useState('');
