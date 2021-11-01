@@ -7,15 +7,15 @@ import {Task} from '../components';
 
 const HomePanel = () => {
   const [task, setTask] = useState('');
-  const [taskItems, setTaskItems] = useState([]);
+  const [taskItems, setTaskItems] = useState<string[]>([]);
 
   const handleAddTask = () => {
     Keyboard.dismiss(); // Keyboard back down
     setTaskItems([...taskItems, task]);
-    setTask(null);
+    setTask('');
   };
 
-  const completeTask = index => {
+  const completeTask = (index: number) => {
     let itemsCopy = [...taskItems];
     itemsCopy.splice(index, 1);
     setTaskItems(itemsCopy);
