@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import {Formik} from 'formik';
 
 import {BackgroundStyled} from '@architecture/components';
+import {FormButton} from '../components';
 
 interface ICreateTaskPanelProps {
   taskTitle: string;
@@ -30,16 +31,25 @@ const CreateTaskPanel = ({
         <SectionTitle>Create a new Task</SectionTitle>
         <Formik initialValues={values} onSubmit={values => console.log(values)}>
           {({handleChange, handleBlur, handleSubmit, values}) => (
-            <Content>
-              <FormTitle>Title</FormTitle>
-              <FormInput
-                onChangeText={handleChange('taskTitle')}
-                onBlur={handleBlur('taskTitle')}
-                value={values.taskTitle}
-              />
+            <FormContainer>
+              <FormContent>
+                <FormTitle>Title</FormTitle>
+                <FormInput
+                  onChangeText={handleChange('taskTitle')}
+                  onBlur={handleBlur('taskTitle')}
+                  value={values.taskTitle}
+                />
+
+                <FormTitle>Description</FormTitle>
+                <FormInput
+                  onChangeText={handleChange('description')}
+                  onBlur={handleBlur('description')}
+                  value={values.description}
+                />
+              </FormContent>
 
               <FormButton title="New Task" onPress={handleSubmit} />
-            </Content>
+            </FormContainer>
           )}
         </Formik>
       </Container>
@@ -59,8 +69,15 @@ const SectionTitle = styled.Text`
   font-weight: bold;
 `;
 
-const Content = styled.View`
+const FormContainer = styled.View`
+  height: 90%;
+  justify-content: space-between;
+`;
+
+const FormContent = styled.ScrollView`
+  flex-direction: column;
   margin-top: 30px;
+  margin-bottom: 30px;
 `;
 
 const FormTitle = styled.Text`
@@ -73,5 +90,3 @@ const FormInput = styled.TextInput`
   border-width: 1px;
   padding: 10px;
 `;
-
-const FormButton = styled.Button``;
