@@ -12,7 +12,17 @@ enum RouteName {
 
 const Routes = () => {
   return (
-    <Tab.Navigator initialRouteName={RouteName.HOME}>
+    <Tab.Navigator
+      initialRouteName={RouteName.HOME}
+      screenOptions={{
+        tabBarHideOnKeyboard: true,
+        tabBarStyle: [
+          {
+            display: 'flex',
+          },
+          null,
+        ],
+      }}>
       <Tab.Screen
         name={RouteName.HOME}
         component={Features.HomeFeature.Screens.HomeScreen}
